@@ -7,7 +7,8 @@ function Skills() {
   const [skills, setSkills] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/skills')
+    const backendUrl = process.env.REACT_APP_BACKEND_URL;
+    axios.get(`${backendUrl}/skills`)
       .then(res => setSkills(res.data))
       .catch(err => console.error("Error al cargar página:", err));
   }, []);

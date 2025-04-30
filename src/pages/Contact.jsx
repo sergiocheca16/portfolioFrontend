@@ -11,8 +11,8 @@ function Contact() {
     e.preventDefault();
     
     try {
-      
-      await axios.post('http://localhost:3000/contact', form);
+      const backendUrl = process.env.REACT_APP_BACKEND_URL;
+      await axios.post(`${backendUrl}/contact`, form);
       alert('Mensaje enviado');
     } catch (error) {
       console.error('Error enviando el mensaje:', error);

@@ -5,7 +5,8 @@ function Projects() {
   const [projects, setProjects] = useState([])
 
   useEffect(() => {
-    axios.get('http://localhost:3000/projects')
+    const backendUrl = process.env.REACT_APP_BACKEND_URL;
+    axios.get(`${backendUrl}/projects`)
       .then(res => setProjects(res.data))
       .catch(err => console.error("Error cargando proyectos:", err))
   }, [])
@@ -17,7 +18,7 @@ function Projects() {
         <div className="project" key={p.id}>
           <a href={p.web} target="_blank" rel="noopener noreferrer">
           <img
-            src={`http://localhost:3000${p.image}`}
+            src={`${process.env.REACT_APP_BACKEND_URL}${p.image}`}
             alt={p.name}
             style={{ maxWidth: '100%', borderRadius: '8px' }}
           />
