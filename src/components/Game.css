@@ -19,12 +19,12 @@
   font-weight: bold;
   text-transform: uppercase;
   gap: 40px;
-  background-color: var(--primary); /* Color similar a un fondo deportivo */
+  background-color: var(--primary);
   padding: 10px 30px;
   border-radius: 8px;
   width: fit-content;
   margin: 0 auto;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para efecto deportivo */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .team {
@@ -59,16 +59,16 @@
 
 .choices-container {
   display: flex;
-  gap: 15px; /* Reducido espacio entre botones */
-  margin-bottom: 5px; /* Reducido margen */
+  gap: 15px;
+  margin-bottom: 5px;
   margin-top: 20px;
 }
 
 .choice-btn {
-  font-size: 30px; /* Tamaño más pequeño para los botones */
+  font-size: 30px;
   background-color: var(--primary);
   color: white;
-  padding: 10px 15px; /* Reducción de padding */
+  padding: 10px 15px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -76,20 +76,20 @@
 }
 
 .choice-btn:hover {
-  transform: scale(1.1); /* Reducido el tamaño al pasar el cursor */
+  transform: scale(1.1);
 }
 
 .result {
   display: flex;
-  gap: 20px; /* Menor separación entre las elecciones */
+  gap: 20px; 
 }
 
 .result .user-choice, .result .computer-choice {
-  font-size: 20px; /* Reducido tamaño de las elecciones */
+  font-size: 20px;
 }
 
 .winner {
-  margin-top: 5px; /* Reducido margen superior */
+  margin-top: 5px;
   font-size: 24px;
   font-weight: bold;
   color: var(--accent);

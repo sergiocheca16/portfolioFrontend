@@ -58,6 +58,10 @@ h1, h2 {
   color: var(--primary);
 }
 
+h2 {
+  text-align: center;
+}
+
 .typewriter2 {
   font-weight: bold;
 }
@@ -158,6 +162,7 @@ body.dark button:hover,
   background-color: #b2d430;
 }
 
+/* PROYECTOS */
 .project img {
   margin-bottom: 0.5rem;
 }
@@ -183,7 +188,7 @@ body.dark button:hover,
 .fade-in {
   opacity: 0;
   animation: fadeIn 1s ease-in-out forwards;
-  animation-delay: 0s; /* No se necesita retraso aquí si se animan los hijos */
+  animation-delay: 0s;
 }
 
 @keyframes fadeIn {
@@ -197,6 +202,7 @@ body.dark button:hover,
   }
 }
 
+/* SIDEBAR */
 /* Botón de abrir el sidebar */
 .sidebar-toggle {
   font-size: 2rem;
@@ -252,6 +258,10 @@ body.dark button:hover,
   display: none;
 }
 
+.dark .sidebar-toggle {
+  background: none;
+}
+
 .theme-toggle {
   background: none;
   border: none;
@@ -296,17 +306,18 @@ body.dark button:hover,
   color: var(--accent)
 }
 
+/* TEXTO HOME */
 /* Contenedor que mantiene espacio reservado para h1 + p */
 .intro-text {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Esto centra horizontalmente los textos */
+  align-items: center;
   justify-content: center;
-  min-height: 6rem; /* o lo necesario */
-  width: 100%; /* Evita que se reajuste al cambiar el ancho */
-  max-width: 700px; /* Define un límite de ancho para mantener estética */
-  margin: 0 auto; /* Centra el bloque */
-  text-align: center; /* Centra el texto si quieres */
+  min-height: 6rem;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 /* Máquina de escribir para h1 */
@@ -368,4 +379,62 @@ body.dark button:hover,
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* SKILLS */
+.fade-in {
+  animation: fadeInSkills 1s ease-in-out forwards;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 6rem;
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 120px;
+}
+
+.skill h3 {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: var(--primary);
+}
+
+@keyframes fadeInSkills {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.skill svg {
+  color: #333;
+  padding: 10px;
+  box-shadow: 0 0 10px var(--primary);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.skill:hover svg,
+.skill:hover h3 {
+  color: var(--accent);
+  transform: scale(1.3);
+}
+
+.dark .skill svg {
+  color: var(--light);
+  box-shadow: 0 0 10px var(--primary);
+}
+
+.dark .skill h3 {
+  color: var(--light);
+}
+
+.dark .skill svg:hover {
+  color: var(--accent)
 }
