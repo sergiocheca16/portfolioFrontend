@@ -1,0 +1,371 @@
+:root {
+  --primary: #1a8b9d;
+  --dark: #000000;
+  --light: #fff5f5;
+  --accent: #b2d430;
+  --bg: #ffffff;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg);
+  color: var(--dark);
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--primary);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  color: white;
+  position: relative;
+}
+
+.logo {
+  margin: 0;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.main-container {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+  flex: 1;
+}
+
+h1, h2 {
+  color: var(--primary);
+}
+
+.typewriter2 {
+  font-weight: bold;
+}
+
+.project {
+  background: white;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px var(--primary);
+  transition: transform 0.2s ease;
+}
+
+.project:hover {
+  transform: scale(1.02);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input, textarea, button {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: var(--accent);
+}
+
+.download-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 1.2rem;
+  background-color: var(--primary);
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: var(--accent);
+}
+
+.dark {
+  background-color: #121212;
+  color: white;
+}
+
+.dark .navbar {
+  background-color: #333;
+}
+
+.dark .nav-links a {
+  color: white;
+}
+
+.dark .nav-links a:hover {
+  color: var(--accent);
+}
+
+.dark .project,
+.dark input,
+.dark textarea {
+  background-color: #333;
+  color: white;
+  border-color: #333;
+}
+
+.dark .logo {
+  color: var(--primary);
+}
+
+body.dark button,
+.dark button {
+  background-color: #333;
+}
+
+body.dark button:hover,
+.dark button:hover {
+  background-color: var(--accent);
+}
+
+.dark .download-btn:hover {
+  background-color: #b2d430;
+}
+
+.project img {
+  margin-bottom: 0.5rem;
+}
+
+.project a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.project a:hover {
+  color: var(--accent);
+}
+
+/* Flex para el layout general */
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Fade animation */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+  animation-delay: 0s; /* No se necesita retraso aquí si se animan los hijos */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Botón de abrir el sidebar */
+.sidebar-toggle {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: var(--primary);
+  cursor: pointer;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1001;
+}
+
+/* Sidebar lateral */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -272px;
+  width: 240px;
+  height: 96vh;
+  background-color: var(--primary);
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar .logo {
+  color: white;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.sidebar a:hover {
+  color: var(--accent);
+}
+
+/* Ocultar botón hamburguesa */
+.sidebar-toggle.hidden {
+  display: none;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-top: auto;
+}
+
+/* Fondo oscuro al activar sidebar */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  z-index: 999;
+}
+
+.overlay.show {
+  display: block;
+}
+
+/* Sidebar en modo oscuro */
+.dark .sidebar {
+  background-color: #333;
+}
+
+.dark .sidebar a,
+.dark .theme-toggle {
+  color: white;
+}
+
+.dark .logo {
+  color: var(--primary)
+}
+
+.dark .theme-toggle:hover,
+.dark .sidebar a:hover {
+  color: var(--accent)
+}
+
+/* Contenedor que mantiene espacio reservado para h1 + p */
+.intro-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Esto centra horizontalmente los textos */
+  justify-content: center;
+  min-height: 6rem; /* o lo necesario */
+  width: 100%; /* Evita que se reajuste al cambiar el ancho */
+  max-width: 700px; /* Define un límite de ancho para mantener estética */
+  margin: 0 auto; /* Centra el bloque */
+  text-align: center; /* Centra el texto si quieres */
+}
+
+/* Máquina de escribir para h1 */
+.typewriter {
+  overflow: hidden;
+  border-right: 2px solid var(--primary);
+  white-space: nowrap;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 2rem;
+  width: 0;
+  animation:
+    typing 3s steps(30, end) forwards,
+    blink-caret 0.75s step-end infinite;
+}
+
+/* Máquina de escribir para p, con delay */
+.typewriter2 {
+  overflow: hidden;
+  border-right: 2px solid var(--primary);
+  white-space: nowrap;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1.2rem;
+  width: 0;
+  animation:
+    typing2 3s steps(50, end) 3s forwards,
+    blink-caret 0.75s step-end infinite;
+}
+
+/* Fade-in escalonado del botón */
+.fade-in-btn {
+  opacity: 0;
+  animation: fadeInBtn 1s ease forwards;
+  animation-delay: 6s;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes typing2 {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: var(--primary) }
+}
+
+@keyframes fadeInBtn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
