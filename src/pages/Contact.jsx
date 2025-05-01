@@ -11,7 +11,7 @@ function Contact() {
     e.preventDefault();
     
     try {
-      const backendUrl = process.env.REACT_APP_BACKEND_URL;
+      const backendUrl = import.meta.env.VITE_BACKEND_URL;
       await axios.post(`${backendUrl}/contact`, form);
       alert('Mensaje enviado');
     } catch (error) {
