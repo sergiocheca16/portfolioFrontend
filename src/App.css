@@ -307,52 +307,17 @@ body.dark button:hover,
 }
 
 /* TEXTO HOME */
-/* Contenedor que mantiene espacio reservado para h1 + p */
-.intro-text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 6rem;
-  width: 100%;
-  max-width: 700px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-/* Máquina de escribir para h1 */
-.typewriter {
-  overflow: hidden;
-  border-right: 2px solid var(--primary);
-  white-space: nowrap;
-  display: inline-block;
-  font-weight: bold;
-  font-size: 2rem;
-  width: 0;
-  animation:
-    typing 3s steps(30, end) forwards,
-    blink-caret 0.75s step-end infinite;
-}
-
-/* Máquina de escribir para p, con delay */
-.typewriter2 {
-  overflow: hidden;
-  border-right: 2px solid var(--primary);
-  white-space: nowrap;
-  display: inline-block;
-  font-weight: bold;
-  font-size: 1.2rem;
-  width: 0;
-  animation:
-    typing2 3s steps(50, end) 3s forwards,
-    blink-caret 0.75s step-end infinite;
-}
 
 /* Fade-in escalonado del botón */
 .fade-in-btn {
   opacity: 0;
   animation: fadeInBtn 1s ease forwards;
-  animation-delay: 6s;
+  animation-delay: 1s;
+}
+
+.p-home {
+  font-weight: bold;
+  text-align: center;
 }
 
 @keyframes typing {
