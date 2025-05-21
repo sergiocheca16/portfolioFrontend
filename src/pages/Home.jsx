@@ -7,7 +7,7 @@ function Home() {
       <h2>Hola, soy Sergio</h2>
       <p className="p-home">Bienvenido a mi portfolio personal. Soy desarrollador web fullstack.</p>
       <div style={{ textAlign: 'center' }}>
-        <a href="/CV Sergio Checa Alvea.pdf" download className="download-btn fade-in-btn">
+        <a href="public/CV Sergio Checa Alvea.pdf" download className="download-btn fade-in-btn">
           Descargar CV
         </a>
       </div>
